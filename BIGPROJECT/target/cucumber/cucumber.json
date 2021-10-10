@@ -1,0 +1,130 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4718655000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Start chating with valid Data",
+        "description": "",
+        "id": "group-chat-cicle;start-chating-with-valid-data;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 4321113900,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User already login with gmail account",
+            "match": {
+              "location": "GroupChatSteps.setLoginGmail()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1056861200,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User select team card",
+            "match": {
+              "location": "GroupChatSteps.selectTeamCard()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 98711300,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User choose group chat feature",
+            "match": {
+              "location": "GroupChatSteps.selectGroupChatFeature()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 335327600,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User should be navigated to the group chat page",
+            "match": {
+              "location": "GroupChatSteps.GroupChatPage()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 257418300,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User send \"Hi All, apa kabs nih?\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Hi All, apa kabs nih?",
+                  "offset": 11
+                }
+              ],
+              "location": "GroupChatSteps.sendChat(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 27400700,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "The chat have been send",
+            "match": {
+              "location": "GroupChatSteps.verifyChat()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 5,
+            "name": "@PositiveCase1"
+          },
+          {
+            "line": 1,
+            "name": "@GroupChat"
+          }
+        ]
+      }
+    ],
+    "name": "Group Chat Cicle",
+    "description": "User start chating in group chat cicle",
+    "id": "group-chat-cicle",
+    "keyword": "Feature",
+    "uri": "features/AddGroupChat.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@GroupChat"
+      }
+    ]
+  }
+]

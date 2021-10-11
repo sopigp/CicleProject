@@ -6,7 +6,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		tags = { "@GroupChat" }, 
+		tags = { "@DocsFiles" }, 
 		features = { "classpath:features" }, 
 		glue = {"classpath:step_definition" }, 
 		plugin= {"pretty","html:target/site/cucumber-pretty","json:target/cucumber/cucumber.json"}

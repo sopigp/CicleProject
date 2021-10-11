@@ -95,6 +95,10 @@ public class CicleTeamPage extends BaseClass {
 		groupChatLabel.click();
 	}
 	
+	public void clickDocsFilesFeature() {
+		docsFilesLabel.click();
+	}
+	
 	public String getTeamName() 
 	{
 		return teamSoalD.getText();

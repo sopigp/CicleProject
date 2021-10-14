@@ -57,7 +57,7 @@ public class GroupChatSteps {
 	    System.out.println("Headquarter Name :" + actualHeadquarter);
 	}
 	
-	@When("User select team card")
+	@When("User click team card in dashboard")
 	public void selectTeamCard() throws Throwable {
 		CicleDashboardPage selectTeamCard = new CicleDashboardPage(webdriver);
 		String actualTeam = selectTeamCard.getTeamName();
@@ -96,6 +96,16 @@ public class GroupChatSteps {
 		CicleGroupChatPage verifChat = new CicleGroupChatPage(webdriver);
 		String chat = verifChat.getChat();
 		System.out.println(chat);
+		verifChat.closeBrowser();
+	}
+	
+//	UPLOAD FILES
+	@And("User upload file \"(.*)\"")
+	public void sendAttachmentChat(String image) throws Throwable {
+	    CicleGroupChatPage sendChat = new CicleGroupChatPage(webdriver);
+	    sendChat.clickChatField();
+	    sendChat.clickUploadFile(image);
+//	    sendChat.clickSendChat();
 	}
 	
 }

@@ -39,7 +39,7 @@ public class CicleGroupChatPage extends BaseClass {
 	@FindBy(xpath = "//div[@class='fr-element fr-view']/p[1]")
 	private WebElement fieldChat;
 	
-	@FindBy(xpath = "//div[@class='CreateGroupMessage_actionSection__3kUoF']/div[1]")
+	@FindBy(xpath = "//div[contains(@Class,'CreateGroupMessage_actionSection')]/div/input")
 	private WebElement btnAttachFile;
 	
 	@FindBy(xpath = "//button[@class='rounded-circle btn btn-warning btn-sm']")
@@ -78,6 +78,19 @@ public class CicleGroupChatPage extends BaseClass {
 	public String getChat() 
 	{
 		return chat.getText();
+	}
+	
+//	UPLOAD FILE METHOD
+	public void clickUploadFile(String image) throws Throwable {
+		String projectLocation = System.getProperty("user.dir");
+		String path = projectLocation + "//lib//files//";
+		path = path + image;
+		btnAttachFile.sendKeys(path);
+	}
+	
+//	QUIT BROWSER
+	public void closeBrowser() {
+		webdriver.quit();
 	}
 }
 

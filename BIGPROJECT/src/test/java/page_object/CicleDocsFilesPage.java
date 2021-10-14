@@ -78,6 +78,9 @@ public class CicleDocsFilesPage extends BaseClass {
 	@FindBy(xpath = "//div[@class='BucketPage_subscribersItem__2UWS0']")
 	private WebElement ownerFolder;
 	
+	@FindBy(xpath = "//div[@id='notistack-snackbar']")
+	private WebElement errorMessage;
+	
 // DOC OBJECT
 	
 	@FindBy(css = ".Doc_main__title__37T5Y > h1")
@@ -93,7 +96,7 @@ public class CicleDocsFilesPage extends BaseClass {
 	private WebElement inDescDoc;
 	
 // UPLOAD FILE
-	@FindBy(xpath = "//p[.='Upload Files']")
+	@FindBy(xpath = "//div[contains(@Class,'NewItemMenu_bodySection__2vSHH')]/div/input")
 	private WebElement btnUploadFiles;
 	
 	
@@ -165,5 +168,27 @@ public class CicleDocsFilesPage extends BaseClass {
 		inDocTitle.isDisplayed();
 		inDescDoc.isDisplayed();
 		return true;
+	}
+	
+//	UPLOAD FILE METHOD
+	public void clickUploadFile(String files) throws Throwable {
+		String projectLocation = System.getProperty("user.dir");
+		String path = projectLocation + "//lib//files//";
+		path = path + files;
+		btnUploadFiles.sendKeys(path);
+	}
+	
+//	QUIT BROWSER
+	public void closeBrowser() {
+		webdriver.quit();
+	}
+//	ERROR MESSAGE
+	public boolean verifyErrorMessage() {
+		errorMessage.isDisplayed();
+		return true;
+	}
+	
+	public String getErrorMessage() {
+		return errorMessage.getText();
 	}
 }

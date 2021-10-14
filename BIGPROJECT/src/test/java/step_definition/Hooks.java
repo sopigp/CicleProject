@@ -33,7 +33,7 @@ public class Hooks {
 		
 
 		webdriver.manage().deleteAllCookies();
-		webdriver.manage().window().maximize();
+//		webdriver.manage().window().maximize();
 		webdriver.get("https://staging.cicle.app/");
 		webdriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 

@@ -2,7 +2,6 @@ package step_definition;
 
 import static org.junit.Assert.assertEquals;
 import org.openqa.selenium.WebDriver;
-
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -12,6 +11,9 @@ import page_object.CicleDocsFilesPage;
 import page_object.CicleGroupChatPage;
 import page_object.CicleLoginPage;
 import page_object.CicleTeamPage;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.By;
 
 @SuppressWarnings("deprecation")
 
@@ -23,6 +25,7 @@ public class DocsFilesSteps {
 		super();
 		this.webdriver = Hooks.webdriver;
 	}
+//	POSITIVE CASE 1
 	
 	@Given("User already login in Cicle Website")
 	public void setLoginGmail() throws Throwable {
@@ -105,7 +108,7 @@ public class DocsFilesSteps {
 		addNewDoc.setDescDoc(descDoc);
 	}
 	
-	@Then("User publish the document")
+	@And("User publish the document")
 	public void publishDoc() throws Throwable {
 		CicleDocsFilesPage publishDoc = new CicleDocsFilesPage(webdriver);
 		publishDoc.clickPublish();
@@ -115,6 +118,54 @@ public class DocsFilesSteps {
 	public void docCreated() throws Throwable {
 		CicleDocsFilesPage verifyDoc = new CicleDocsFilesPage(webdriver);
 		verifyDoc.verifyDocs();
+		verifyDoc.closeBrowser();
+	}
+	
+//	POSITIVE CASE 2
+	
+	@And("User choose folder to upload \"(.*)\"")
+	public void chooseFolder(String files) throws Throwable {
+		CicleDocsFilesPage uploadFile = new CicleDocsFilesPage(webdriver);
+		uploadFile.clickFolder();
+		Thread.sleep(3000);
+		uploadFile.clickAdd();
+//		new WebDriverWait(webdriver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".NewItemMenu_bodySection__2vSHH > [tabindex='0'] p"))).click();
+		uploadFile.clickUploadFile(files);
+//		uploadFile.closeBrowser();
+	}
+		
+	@Then("The file already uploaded & published")
+	public void fileUploaded() throws Throwable {
+		CicleDocsFilesPage verifyFile = new CicleDocsFilesPage(webdriver);
+//	belum ada verify hasil upload
+	}	
+	
+//	NEGATIVE CASE 1
+	@And("User create new folder but leave \"(.*)\" blank")
+	public void createFolder(String folderName) throws Throwable {
+		CicleDocsFilesPage publishDoc = new CicleDocsFilesPage(webdriver);
+		publishDoc.clickAdd();
+		publishDoc.clickNewFolder();
+		publishDoc.setFolderName(folderName);
+		publishDoc.clickSaveFolder();
+	}
+	
+	@Then("Error message will appears")
+	public void errorMessage() throws Throwable {
+		CicleDocsFilesPage popUpError = new CicleDocsFilesPage(webdriver);
+		popUpError.verifyErrorMessage();
+		popUpError.getErrorMessage();
+		popUpError.closeBrowser();
+	}
+	
+	@And("User add new doc on the folder that have been created but leave \"(.*)\" & \"(.*)\" document blank")
+	public void createDoc(String titleDoc, String descDoc) throws Throwable {
+		CicleDocsFilesPage publishDoc = new CicleDocsFilesPage(webdriver);
+		publishDoc.verifyInFolder();
+		publishDoc.clickAdd();
+		publishDoc.clickAddNewDoc();
+		publishDoc.setTitleDoc(titleDoc);
+		publishDoc.setDescDoc(descDoc);
 	}
 	
 }

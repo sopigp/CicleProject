@@ -97,7 +97,7 @@ public class BoardCicleSteps {
 	    String newListName = addBoard.getListName();
 	    verifyListName = newListName;
 	    System.out.println(newListName);
-	    Thread.sleep(2000);
+	    Thread.sleep(8000);
 	}
 	
 	@And("User add card on the list of kanban board that have been created with \"(.*)\" as name card")
@@ -159,11 +159,75 @@ public class BoardCicleSteps {
 		cardDetails.clickSaveDueDate();
 		cardDetails.clickCloseCard();
 	}
+//	UPLOAD FILE
+	@And("User completes card details with input \"(.*)\" as notes, upload \"(.*)\" as attachment, \"(.*)\" as comment, \"(.*)\" as label, \"(.*)\" as date, \"(.*)\" as time")
+	public void completeCard(String notes, String image, String comments, String labels, String date, String time) throws Throwable {
+		CicleBoardPage cardDetails = new CicleBoardPage(webdriver);
+
+		String expectedTeamCard = cardDetails.getAtTeam();
+		assertEquals(expectedTeamCard, verifyTeamName);
+	    
+		
+		String expectedList = cardDetails.getInList();
+		assertEquals(expectedList, verifyListName);
+
+		cardDetails.clickBoxNotes();
+		Thread.sleep(2000);
+		cardDetails.setNotes(notes);
+		cardDetails.clickSaveNotes();
+		Thread.sleep(5000);
+		cardDetails.clickUploadFile(image);
+		cardDetails.verifyFile();
+		cardDetails.clickFormComments();
+		cardDetails.setComments(comments);
+		Thread.sleep(5000);
+		cardDetails.clickSaveComments();
+		cardDetails.clickLabels();
+		Thread.sleep(5000);
+		cardDetails.clickCreateNewLabels();
+		cardDetails.setLabelsName(labels);
+		cardDetails.clickLabelColor();
+		cardDetails.clickSaveLabels();
+		cardDetails.clickLabel();
+		cardDetails.clickCloseLabels();
+		cardDetails.clickAddDueDate();
+		cardDetails.setDate(date);
+		cardDetails.setTime(time);
+		cardDetails.clickSaveDueDate();
+		cardDetails.clickCloseCard();
+	}
 	
-//	@And("User selects one of the available team cards")
-//	public void selectTeamCard() throws Throwable {
-//	
-//	}
+//	NEGATIVE CASE 1	
+	@And("User add list kanban board but leave \"(.*)\" blank")
+	public void addList(String listName) throws Throwable {
+	    CicleBoardPage addList = new CicleBoardPage(webdriver);
+	    addList.clickAddList();
+	    addList.setListName(listName);
+	    addList.clickCreateAddList();
+	    String newListName = addList.getListName();
+	    verifyListName = newListName;
+	    System.out.println(newListName);
+	    Thread.sleep(2000);
+	}
 	
+//	NEGATIVE CASE 2
+	@And("User add card on the list of kanban board that have been created but leave \"(.*)\" blank")
+	public void addCard(String cardName) throws Throwable {
+	    CicleBoardPage addCard = new CicleBoardPage(webdriver);
+	    addCard.clickNewAddCard();
+	    addCard.setCardName(cardName);
+		
+		String expectedCardName = addCard.getCardName(); 
+		newCardName = expectedCardName;
+		addCard.clickAddCard();
+		Thread.sleep(2000);
+	}
+	
+	@Then("Popup error message will appears")
+	public void popUpError() throws Throwable {
+	    CicleBoardPage popUpError = new CicleBoardPage(webdriver);
+	    popUpError.getErrorMessage();
+	    popUpError.closeBrowser();
+	}
 	
 }

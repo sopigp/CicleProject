@@ -3,10 +3,68 @@
     "line": 2,
     "elements": [
       {
+        "comments": [
+          {
+            "line": 5,
+            "value": "#\t@PositiveCase1"
+          },
+          {
+            "line": 6,
+            "value": "#\tScenario Outline: Create new folder \u0026 new document"
+          },
+          {
+            "line": 7,
+            "value": "#\t\tGiven User already login in Cicle Website"
+          },
+          {
+            "line": 8,
+            "value": "#\t\tWhen User select team"
+          },
+          {
+            "line": 9,
+            "value": "#\t\tAnd User choose docs \u0026 files feature"
+          },
+          {
+            "line": 10,
+            "value": "#\t\tThen User should be navigated to the docs \u0026 files page"
+          },
+          {
+            "line": 11,
+            "value": "#\t\tAnd User create new folder with \"\u003cfolderName\u003e\" as folder name"
+          },
+          {
+            "line": 12,
+            "value": "#\t\tAnd User add new doc on the folder that have been created with \"\u003ctitleDoc\u003e\" as title document and \"\u003cdescDoc\u003e\" as body document"
+          },
+          {
+            "line": 13,
+            "value": "#\t\tAnd User publish the document"
+          },
+          {
+            "line": 14,
+            "value": "#\t\tThen The document already created \u0026 published"
+          },
+          {
+            "line": 15,
+            "value": "#"
+          },
+          {
+            "line": 16,
+            "value": "#\t\tExamples:"
+          },
+          {
+            "line": 17,
+            "value": "#\t\t\t|\t\tfolderName\t\t\t\t\t\t|\t\ttitleDoc\t\t\t\t\t\t\t\t\t\t\t| \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tdescDoc\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t|"
+          },
+          {
+            "line": 18,
+            "value": "#\t\t\t|\t\tWFH Terms \u0026 Conditions|\t\tAturan WFH PT Cilsy Foilution\t|\tWajib mengikuti online meeting setiap hari kerja jam 08.00 - 10.00 WIB menggunakan google meet dengan account yang telah terdaftar oleh PT Cilsy Fioulution\t|"
+          }
+        ],
         "before": [
           {
             "result": {
-              "duration": 5380898700,
+              "duration": 7478991600,
               "status": "passed"
             },
             "match": {
@@ -14,19 +72,19 @@
             }
           }
         ],
-        "line": 18,
+        "line": 21,
         "name": "Upload files/docs with valid extention \u0026 size",
         "description": "",
-        "id": "docs-\u0026-files-cicle;upload-files/docs-with-valid-extention-\u0026-size;;2",
+        "id": "docs-\u0026-files-cicle;upload-files/docs-with-valid-extention-\u0026-size",
         "type": "scenario",
-        "keyword": "Scenario Outline",
+        "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 4615910800,
+              "duration": 4842570400,
               "status": "passed"
             },
-            "line": 7,
+            "line": 22,
             "name": "User already login in Cicle Website",
             "match": {
               "location": "DocsFilesSteps.setLoginGmail()"
@@ -35,10 +93,10 @@
           },
           {
             "result": {
-              "duration": 1483665900,
+              "duration": 1912219700,
               "status": "passed"
             },
-            "line": 8,
+            "line": 23,
             "name": "User select team",
             "match": {
               "location": "DocsFilesSteps.selectTeamCard()"
@@ -47,10 +105,10 @@
           },
           {
             "result": {
-              "duration": 132875300,
+              "duration": 169822800,
               "status": "passed"
             },
-            "line": 9,
+            "line": 24,
             "name": "User choose docs \u0026 files feature",
             "match": {
               "location": "DocsFilesSteps.selectDocsFilesFeature()"
@@ -59,10 +117,10 @@
           },
           {
             "result": {
-              "duration": 565617000,
+              "duration": 573465400,
               "status": "passed"
             },
-            "line": 10,
+            "line": 25,
             "name": "User should be navigated to the docs \u0026 files page",
             "match": {
               "location": "DocsFilesSteps.DocsFilesPage()"
@@ -71,84 +129,39 @@
           },
           {
             "result": {
-              "duration": 895854400,
+              "duration": 3633961700,
               "status": "passed"
             },
-            "line": 11,
-            "name": "User create new folder with \"WFH Terms \u0026 Conditions\" as folder name",
+            "line": 26,
+            "name": "User choose folder to upload \"fototesting.jpg\"",
             "match": {
               "arguments": [
                 {
-                  "val": "WFH Terms \u0026 Conditions",
-                  "offset": 29
+                  "val": "fototesting.jpg",
+                  "offset": 30
                 }
               ],
-              "location": "DocsFilesSteps.sendChat(String)"
+              "location": "DocsFilesSteps.chooseFolder(String)"
             },
-            "matchedColumns": [
-              0
-            ],
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 2257237300,
+              "duration": 2000300,
               "status": "passed"
             },
-            "line": 12,
-            "name": "User add new doc on the folder that have been created with \"Aturan WFH PT Cilsy Foilution\" as title document and \"Wajib mengikuti online meeting setiap hari kerja jam 08.00 - 10.00 WIB menggunakan google meet dengan account yang telah terdaftar oleh PT Cilsy Fioulution\" as body document",
+            "line": 27,
+            "name": "The file already uploaded \u0026 published",
             "match": {
-              "arguments": [
-                {
-                  "val": "Aturan WFH PT Cilsy Foilution",
-                  "offset": 60
-                },
-                {
-                  "val": "Wajib mengikuti online meeting setiap hari kerja jam 08.00 - 10.00 WIB menggunakan google meet dengan account yang telah terdaftar oleh PT Cilsy Fioulution",
-                  "offset": 114
-                }
-              ],
-              "location": "DocsFilesSteps.addNewDoc(String,String)"
-            },
-            "matchedColumns": [
-              1,
-              2
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 112151900,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "User publish the document",
-            "match": {
-              "location": "DocsFilesSteps.publishDoc()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 105024800,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "The document already created \u0026 published",
-            "match": {
-              "location": "DocsFilesSteps.docCreated()"
+              "location": "DocsFilesSteps.fileUploaded()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "line": 1,
-            "name": "@DocsFiles"
-          },
-          {
-            "line": 5,
-            "name": "@PositiveCase"
+            "line": 20,
+            "name": "@PositiveCase2"
           }
         ]
       }

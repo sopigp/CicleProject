@@ -76,7 +76,7 @@ $(document).ready(function() {
           <tr class="info">
             <td>Cicle Project</td>
                           <td>1</td>
-                        <td>12 Oct 2021, 00:16</td>
+                        <td>13 Oct 2021, 00:18</td>
           </tr>
         </tbody>
       </table>
@@ -126,13 +126,13 @@ $(document).ready(function() {
                     <td  class="passed"    >1</td>
           <td >0</td>
           <td class="total">1</td>
-          <td      class="passed"    >8</td>
+          <td      class="passed"    >7</td>
           <td >0</td>
           <td >0</td>
           <td >0</td>
-          <td >0</td>
+          <td   class="undefined" >1</td>
           <td class="total">8</td>
-          <td class="duration" data-value="10168337400">10s 168ms</td>
+          <td class="duration" data-value="37741979000">37s 741ms</td>
           <td class="passed">Passed</td>
         </tr>
         </tbody>
@@ -152,12 +152,12 @@ $(document).ready(function() {
                   
 <div class="element">
       <div class="indention">
-      <a href="features-AddDocs-Files-feature.html">View Feature</a> <i>Docs & Files Cicle</i>
+      <a href="features-AddBoard-feature.html">View Feature</a> <i>Board Cicle</i>
     </div>
   
   
 <div class="tags indention">
-       <a href="DocsFiles.html">@DocsFiles</a>
+       <a href="KanbanBoard.html">@KanbanBoard</a>
        <a href="PositiveCase.html">@PositiveCase</a>
   </div>
 
@@ -166,7 +166,7 @@ $(document).ready(function() {
     
 <div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
-  <span class="name">Upload files/docs with valid extention &amp; size</span>
+  <span class="name">Add New Board with valid Data</span>
   
 
        <i class="chevron fa fa-fw"></i>
@@ -196,7 +196,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
                           <span class="location name">Hooks.openBrowser()</span>
                         
-  <span class="lead-duration duration">5s 380ms</span>
+  <span class="lead-duration duration">5s 175ms</span>
 
           </div>
 
@@ -214,7 +214,7 @@ $(document).ready(function() {
 <div class="steps inner-level">
     <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-3">
     
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
   
@@ -229,9 +229,9 @@ $(document).ready(function() {
         
 <div class="brief passed">
   <span class="keyword indention">Given</span>
-  <span class="name">User already login in Cicle Website</span>
+  <span class="name">User already login using gmail account</span>
   
-  <span class="lead-duration duration">4s 615ms</span>
+  <span class="lead-duration duration">5s 013ms</span>
 
   </div>
 
@@ -250,9 +250,9 @@ $(document).ready(function() {
         
 <div class="brief passed">
   <span class="keyword indention">When</span>
-  <span class="name">User select team</span>
+  <span class="name">User selects one of the available team cards</span>
   
-  <span class="lead-duration duration">1s 483ms</span>
+  <span class="lead-duration duration">1s 413ms</span>
 
   </div>
 
@@ -271,9 +271,9 @@ $(document).ready(function() {
         
 <div class="brief passed">
   <span class="keyword indention">And</span>
-  <span class="name">User choose docs & files feature</span>
+  <span class="name">User choose board feature</span>
   
-  <span class="lead-duration duration">132ms</span>
+  <span class="lead-duration duration">147ms</span>
 
   </div>
 
@@ -292,9 +292,9 @@ $(document).ready(function() {
         
 <div class="brief passed">
   <span class="keyword indention">Then</span>
-  <span class="name">User should be navigated to the docs & files page</span>
+  <span class="name">User should be navigated to the board page</span>
   
-  <span class="lead-duration duration">565ms</span>
+  <span class="lead-duration duration">720ms</span>
 
   </div>
 
@@ -313,9 +313,9 @@ $(document).ready(function() {
         
 <div class="brief passed">
   <span class="keyword indention">And</span>
-  <span class="name">User create new folder with "WFH Terms & Conditions" as folder name</span>
+  <span class="name">User add list kanban board with "Backlog" as list name</span>
   
-  <span class="lead-duration duration">895ms</span>
+  <span class="lead-duration duration">8s 775ms</span>
 
   </div>
 
@@ -334,9 +334,9 @@ $(document).ready(function() {
         
 <div class="brief passed">
   <span class="keyword indention">And</span>
-  <span class="name">User add new doc on the folder that have been created with "Aturan WFH PT Cilsy Foilution" as title document and "Wajib mengikuti online meeting setiap hari kerja jam 08.00 - 10.00 WIB menggunakan google meet dengan account yang telah terdaftar oleh PT Cilsy Fioulution" as body document</span>
+  <span class="name">User add card on the list of kanban board that have been created with "Add Rate Feature" as name card</span>
   
-  <span class="lead-duration duration">2s 257ms</span>
+  <span class="lead-duration duration">4s 990ms</span>
 
   </div>
 
@@ -354,10 +354,10 @@ $(document).ready(function() {
           <div class="step">
         
 <div class="brief passed">
-  <span class="keyword indention">When</span>
-  <span class="name">User publish the document</span>
+  <span class="keyword indention">And</span>
+  <span class="name">User completes card details with input "User can add rate after transaction success" as notes, "ok, noted. thank you" as comment, "sprint1" as label, "10/08/2021" as date, "11:22 AM" as time</span>
   
-  <span class="lead-duration duration">112ms</span>
+  <span class="lead-duration duration">16s 681ms</span>
 
   </div>
 
@@ -374,11 +374,11 @@ $(document).ready(function() {
       </div>
           <div class="step">
         
-<div class="brief passed">
+<div class="brief undefined">
   <span class="keyword indention">Then</span>
-  <span class="name">The document already created & published</span>
+  <span class="name">card details already created</span>
   
-  <span class="lead-duration duration">105ms</span>
+  <span class="lead-duration duration">000ms</span>
 
   </div>
 

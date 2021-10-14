@@ -71,6 +71,9 @@ public class CicleBoardPage extends BaseClass {
 	@FindBy(id = "editCardMenuIcon")
 	private WebElement btnEditCard;
 	
+	@FindBy(xpath = "//div[@id='notistack-snackbar']")
+	private WebElement errorMessage;
+	
 //	ARCHIVED ITEMS OBJECT
 	
 	@FindBy(xpath = "//p[.='Archived Items']")
@@ -106,11 +109,11 @@ public class CicleBoardPage extends BaseClass {
 	@FindBy(xpath = "//p[@class='ManageAttachments_mediumTitle__8RnWX']")
 	private WebElement labelAttachments;
 	
-	@FindBy(xpath = "//div[@class='ManageAttachments_iconSection__320cD']")
-	private WebElement newAttachments;
-	
-	@FindBy(xpath = "//div[@class='ManageAttachments_askDropContainer__aTIyn']")
+	@FindBy(xpath = "//div[contains(@Class, 'CardDetailContainer_CardDetailContainer__sideColumn')]//input")
 	private WebElement fieldAttachments;
+	
+	@FindBy(xpath = "//h1[.='fototesting.jpg']")
+	private WebElement fileUploaded;
 	
 	@FindBy(xpath = "//p[@class='CommentsSectionContainer_CommentsSectionContainer__mediumTitle__2KVWn']")
 	private WebElement labelComments;
@@ -343,5 +346,28 @@ public class CicleBoardPage extends BaseClass {
 //	**CLOSE CARD DETAILS
 	public void clickCloseCard() {
 		btnCloseCard.click();
+	}
+	
+//	ERROR MESSAGE
+	public String getErrorMessage() {
+		return errorMessage.getText();
+	}
+	
+//	UPLOAD FILE METHOD
+	public void clickUploadFile(String image) throws Throwable {
+		String projectLocation = System.getProperty("user.dir");
+		String path = projectLocation + "//lib//files//";
+		path = path + image;
+		fieldAttachments.sendKeys(path);
+	}
+	
+	public boolean verifyFile() {
+		fileUploaded.isDisplayed();
+		return true;
+	}
+	
+//	QUIT BROWSER
+	public void closeBrowser() {
+		webdriver.quit();
 	}
 }
